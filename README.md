@@ -59,8 +59,8 @@ Sophon.Downloader.exe update <gameId> <package> <fromVer> <toVer> <outputDir> [o
 #### Example:
 
 ```cmd
-Sophon.Downloader.exe full gopR6Cufr3 game 5.7 Downloads
-Sophon.Downloader.exe update gopR6Cufr3 en-us 5.6 5.7 Downloads --threads=4 --handles=128
+Sophon.Downloader.exe full gopR6Cufr3 game 6.0 Downloads
+Sophon.Downloader.exe update gopR6Cufr3 en-us 5.8 6.0 Downloads --threads=4 --handles=128
 ```
 
 
@@ -97,13 +97,15 @@ Example:
   "MaxHttpHandle": 128,
   "Silent": false,
   "Versions": {
-    "full": ["5.6", "5.7", "5.8"],
+    "full": ["5.6", "5.7", "5.8", "6.0"],
     "update": [
       ["5.5", "5.6"],
       ["5.5", "5.7"],
       ["5.6", "5.7"],
       ["5.6", "5.8"],
-      ["5.7", "5.8"]
+      ["5.7", "5.8"],
+      ["5.7", "6.0"],
+      ["5.8", "6.0"]
     ]
   }
 }

@@ -146,8 +146,8 @@ namespace Core.Runner
                       -h, --help                  Show this help message
 
                     Example:
-                      Sophon.Downloader.exe full gopR6Cufr3 game 5.6 Downloads
-                      Sophon.Downloader.exe update gopR6Cufr3 en-us 5.5 5.6 Downloads --threads=4 --handles=64
+                      Sophon.Downloader.exe full gopR6Cufr3 game 5.8 Downloads
+                      Sophon.Downloader.exe update gopR6Cufr3 en-us 5.8 6.0 Downloads --threads=4 --handles=128
                 """);
                 return 0;
             }
