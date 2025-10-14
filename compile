@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+rm -rf bin obj ../bin ../Sophon/bin ../Sophon/obj
+
+dotnet publish Core/Core.csproj -r linux-x64
+
+echo "Checking for dependency library /usr/lib/libzstd.so ..."
+
+zstd=$(find /usr/lib -name "libzstd.so" | head -n 1)
+
+if [ -n "$zstd" ]; then
+    echo "Found: $zstd"
+    mkdir -p bin/Lib/linux-x64/
+    ln -s "$zstd" bin/Lib/linux-x64/
+    ln -s "$zstd" bin/Lib/linux-x64/libzstd-bmi2.so
+else
+    echo "libzstd.so not found!"
+    exit 1
+fi

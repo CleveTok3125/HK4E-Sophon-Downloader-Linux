@@ -19,22 +19,26 @@ This tool aims to bypass that limitation, so you can download directly, efficien
 
 ## Requirements
 
-- Install [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- `dotnet-sdk-9.0`
 
 
 ## Compile Instructions
 
-To compile the project:
-
-1. Just click `compile.bat`
-2. The release output automatically will be in the `bin` folder
-
+```bash
+chmod +x compile
+./compile
+```
+The release output automatically will be in the `bin` folder
 
 ## How to Use
 
 ### Option 1: Interactive Menu (Recommended)
 
-Just click Sophon.Downloader.exe
+```bash
+chmod +x bin/Sophon.Downloader
+bin/Sophon.Downloader
+```
+
 You’ll be greeted with:
 
 ```
@@ -51,16 +55,17 @@ It will auto-detect language options and available versions from your config.
 
 ### Option 2: CLI Mode (Advanced Users)
 
-```cmd
-Sophon.Downloader.exe full   <gameId> <package> <version> <outputDir> [options]
-Sophon.Downloader.exe update <gameId> <package> <fromVer> <toVer> <outputDir> [options]
+```bash
+chmod +x bin/Sophon.Downloader
+bin/Sophon.Downloader full   <gameId> <package> <version> <outputDir> [options]
+bin/Sophon.Downloader update <gameId> <package> <fromVer> <toVer> <outputDir> [options]
 ```
 
 #### Example:
 
 ```cmd
-Sophon.Downloader.exe full gopR6Cufr3 game 6.0 Downloads
-Sophon.Downloader.exe update gopR6Cufr3 en-us 5.8 6.0 Downloads --predownload --OSREL --threads=2 --handles=64
+bin/Sophon.Downloader full gopR6Cufr3 game 6.0 Downloads
+bin/Sophon.Downloader update gopR6Cufr3 en-us 5.8 6.0 Downloads --predownload --OSREL --threads=2 --handles=64
 ```
 
 

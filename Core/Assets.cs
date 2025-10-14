@@ -36,13 +36,16 @@ namespace Core
 
                 if (manifestFrom?.ManifestInfo == null || manifestFrom?.ChunksInfo == null ||
                     (!string.IsNullOrEmpty(newManifestUrl) &&
-                     (manifestTo?.ManifestInfo == null || manifestTo?.ChunksInfo == null)))
+                    (manifestTo?.ManifestInfo == null || manifestTo?.ChunksInfo == null)))
                 {
                     return Tuple.Create<List<SophonAsset>?, long>(null, 0);
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine(ex);
+                Console.ResetColor();
                 return Tuple.Create<List<SophonAsset>?, long>(null, 0);
             }
 
@@ -65,8 +68,11 @@ namespace Core
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex);
+                Console.ResetColor();
                 return Tuple.Create<List<SophonAsset>?, long>(null, 0);
             }
 

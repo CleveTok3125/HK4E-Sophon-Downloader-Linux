@@ -8,7 +8,10 @@ namespace Core.Runner
     {
         public static async Task<int> Run(string[] args)
         {
-            Core.Utils.WindowUtils.CenterConsole();
+            #if WINDOWS
+            // This code will now only be included in the Windows version
+            WindowUtils.CenterConsole();
+            #endif
 
             if (args.Length > 0)
                 CliHandler.ParseArgsAndSetConfig(args);
