@@ -6,7 +6,6 @@ Starting from version `5.6`, they transitioned to using **Sophon Chunks** for up
 As a result, it is no longer possible to download game assets **without using their Launcher**.
 This tool aims to bypass that limitation, so you can download directly, efficiently, and without bloat.
 
-
 ## Features
 
 - Full and Update download modes
@@ -16,11 +15,9 @@ This tool aims to bypass that limitation, so you can download directly, efficien
 - Fast, parallel downloads (multi-threaded)
 - Zero dependencies
 
-
 ## Requirements
 
 - `dotnet-sdk-9.0`
-
 
 ## Compile Instructions
 
@@ -28,6 +25,7 @@ This tool aims to bypass that limitation, so you can download directly, efficien
 chmod +x compile
 ./compile
 ```
+
 The release output automatically will be in the `bin` folder
 
 ## How to Use
@@ -49,9 +47,8 @@ You’ll be greeted with:
 [0] Exit
 ```
 
-Navigate with number keys, follow the prompts, and you're good.  
+Navigate with number keys, follow the prompts, and you're good.
 It will auto-detect language options and available versions from your config.
-
 
 ### Option 2: CLI Mode (Advanced Users)
 
@@ -61,13 +58,12 @@ bin/Sophon.Downloader full   <gameId> <package> <version> <outputDir> [options]
 bin/Sophon.Downloader update <gameId> <package> <fromVer> <toVer> <outputDir> [options]
 ```
 
-#### Example:
+#### Example
 
 ```cmd
 bin/Sophon.Downloader full gopR6Cufr3 game 6.0 Downloads
-bin/Sophon.Downloader update gopR6Cufr3 en-us 5.8 6.0 Downloads --predownload --OSREL --threads=2 --handles=64
+bin/Sophon.Downloader update gopR6Cufr3 en-us 6.0 6.1 Downloads --predownload --OSREL --threads=2 --handles=64
 ```
-
 
 ### CLI Options
 
@@ -82,9 +78,8 @@ bin/Sophon.Downloader update gopR6Cufr3 en-us 5.8 6.0 Downloads --predownload --
 | `--silent`         | Disable all console output except errors    |
 | `-h`, `--help`     | Show help info                              |
 
-> If your input is garbage, it will fall back to defaults silently.  
+> If your input is garbage, it will fall back to defaults silently.
 > You were warned.
-
 
 ## config.json
 
@@ -103,7 +98,7 @@ Example:
   "MaxHttpHandle": 128,
   "Silent": false,
   "Versions": {
-    "full": ["5.6", "5.7", "5.8", "6.0"],
+    "full": ["5.6", "5.7", "5.8", "6.0", "6.1"],
     "update": [
       ["5.5", "5.6"],
       ["5.5", "5.7"],
@@ -111,12 +106,13 @@ Example:
       ["5.6", "5.8"],
       ["5.7", "5.8"],
       ["5.7", "6.0"],
-      ["5.8", "6.0"]
+      ["5.8", "6.0"],
+      ["5.8", "6.1"],
+      ["6.0", "6.1"]
     ]
   }
 }
 ```
-
 
 ## Notes
 
@@ -126,9 +122,8 @@ Example:
   If your version doesn't exist, you'll get a clean `[ERROR] Failed to fetch manifest` — no crash.
 - Maximum thread count = your CPU core count.
 
-
 ## Disclaimer
 
-This tool is for reverse engineering & educational use only.  
-Not affiliated with miHoYo, Cognosphere, or any official entity.  
+This tool is for reverse engineering & educational use only.
+Not affiliated with miHoYo, Cognosphere, or any official entity.
 Do not use this project for public distribution or commercial purposes.
